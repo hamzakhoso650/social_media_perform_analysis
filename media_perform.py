@@ -4,10 +4,13 @@ import numpy as np
 import joblib
 import os  # Path Handling
 
-# Load Model
-current_dir = os.path.dirname(os.path.abspath(__file__))
-model_path = r"D:\social_media_perform_analysis\social_mediam_odel.joblib"
-model = joblib.load(model_path)
+# Load Model (Use relative path)
+model_path = os.path.join(os.path.dirname(__file__), "social_mediam_odel.joblib")
+
+try:
+    model = joblib.load(model_path)
+except FileNotFoundError:
+    st.error("Model file not found. Make sure you have uploaded `social_mediam_odel.joblib` to the deployment environment.")
 
 # **Custom Styling**
 st.markdown("""
