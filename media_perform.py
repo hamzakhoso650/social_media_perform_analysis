@@ -150,3 +150,4 @@ elif option == "Manual Input":
         input_data = np.array([[Platform, Post_Type, Likes, Shares, Comments, Impressions, Shares_per_Impression, Engagement_per_Impression]])
         prediction = model.predict(input_data)[0]
         st.success(f"Predicted Engagement Rate: **{prediction:.2f}**")
+        st.subheader("Pwoered By: Ameer Hamza Khoso")
